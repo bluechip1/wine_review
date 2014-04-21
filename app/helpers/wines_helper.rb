@@ -3,6 +3,10 @@ module WinesHelper
     time.strftime("%B %d, %Y at %l:%M %p")
   end
 
+  def formatted_date(time)
+    time.strftime("%B %d, %Y")
+  end
+
   def format_average_rating(wine)
     average = wine.average_rating
     if average
