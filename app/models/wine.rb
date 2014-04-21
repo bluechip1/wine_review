@@ -1,7 +1,8 @@
 class Wine < ActiveRecord::Base
 	VARIETALS = ['Chardonnay', 'Cabernet Sauvignon', 'Merlot']
 	
-
+ 
+    has_many: log_entry, dependent: :destroy
 	validates :name, :year, :country, presence: true
 	validates :varietal, :inclusion => { :in => VARIETALS }
 	validates :year,
