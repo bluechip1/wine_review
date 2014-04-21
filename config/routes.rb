@@ -1,8 +1,6 @@
 WineReview::Application.routes.draw do
-  resources :log_entries
-
   resources :wines do
-    resource :log_entries
+    resources :log_entries
     get 'page/:page', :action => :index, :on => :collection
   end
   root 'wines#index'
