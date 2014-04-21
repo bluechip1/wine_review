@@ -1,10 +1,19 @@
 class Wine < ActiveRecord::Base
-	VARIETALS = ['Chardonnay', 'Cabernet Sauvignon', 'Merlot']
-	
+  VARIETALS = ['Chardonnay', 'Cabernet Sauvignon', 'Merlot']
  
-    has_many: log_entry, dependent: :destroy
-	validates :name, :year, :country, presence: true
-	validates :varietal, :inclusion => { :in => VARIETALS }
-	validates :year,
+  has_many :log_entries, dependent: :destroy
+  validates :name, :year, :country, presence: true
+  validates :varietal, :inclusion => { :in => VARIETALS }
+  validates :year,
 	   numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+
+  
+  def average_rating
+    if log_entries.loaded?
+      log_entries.map(&:rating).compact.average
+    else
+      log_entries.average(:rating)
+    end
+  end
+
 end
