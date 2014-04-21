@@ -5,13 +5,13 @@ one:
   rating: MyString
   location: MyString
   comments: MyString
-  tasted_on: 2014-04-20 20:47:09
-  wine_review_id: 
+  tasted_on: 2014-04-20 22:15:22
+  wine_id: 
 
 two:
   name: MyString
   rating: MyString
   location: MyString
   comments: MyString
-  tasted_on: 2014-04-20 20:47:09
-  wine_review_id: 
+  tasted_on: 2014-04-20 22:15:22
+  wine_id: 

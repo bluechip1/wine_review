@@ -9,6 +9,8 @@
   <p><label>Varietal:</label> <%= @wine.varietal %></p>
 </article>
 
+<p><label>Average Review:</label> <%= format_average_rating(@wine) %></p>
+
 <%= link_to 'All Wine', wines_path %> 
 | <%= link_to 'Edit', edit_wine_path(@wine) %>
   
